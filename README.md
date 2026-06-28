@@ -2,23 +2,26 @@
 
 Terminal UI for [voxtype](https://github.com/peteonrails/voxtype)'s meeting mode. Browse, record, transcribe, and export meetings without leaving the terminal.
 
+![screenshot](screenshot.png)
+
 ## Requirements
 
 - [Bun](https://bun.sh) ≥ 1.0
 - [voxtype](https://github.com/peteonrails/voxtype) CLI in `$PATH`
 
-## Install
+## Install & run
 
 ```sh
-bun install -g voxtype-meeting-tui
+bun install -g github:iSparsh/voxtype-meeting-tui
+vmt
 ```
 
-Or download a pre-built binary from [Releases](https://github.com/iSparsh/voxtype-meeting-tui/releases) — no Bun required to run it.
-
-## Run
+Or run from source:
 
 ```sh
-vmt
+git clone https://github.com/iSparsh/voxtype-meeting-tui
+cd voxtype-meeting-tui
+bun install && bun run start
 ```
 
 ## Keys
