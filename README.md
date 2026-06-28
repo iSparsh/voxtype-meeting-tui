@@ -13,7 +13,7 @@ Terminal UI for [voxtype](https://github.com/peteonrails/voxtype)'s meeting mode
 bun install -g voxtype-meeting-tui
 ```
 
-Or download a pre-built binary from [Releases](../../releases) — no Bun required to run it.
+Or download a pre-built binary from [Releases](https://github.com/iSparsh/voxtype-meeting-tui/releases) — no Bun required to run it.
 
 ## Run
 
