@@ -131,6 +131,10 @@ function WelcomeView(state: AppState) {
     );
   }
 
+  const K = 10; // key column width
+  const row = (key: string, desc: string) =>
+    Text({ content: t`${fg(th.textBody)(key.padEnd(K))}${fg(th.textDimmer)(desc)}` });
+
   return Box(
     {
       flexGrow: 1,
@@ -141,17 +145,20 @@ function WelcomeView(state: AppState) {
     },
     Text({ content: t`${bold(fg(th.accentSoft)("Voxtype Meeting TUI"))}` }),
     Text({ content: "", height: 1 }),
-    Text({ content: "n          start new meeting", fg: th.textDimmer }),
-    Text({ content: "j / k      navigate sidebar",  fg: th.textDimmer }),
-    Text({ content: "Enter      open transcript",   fg: th.textDimmer }),
-    Text({ content: "Tab        switch panes",      fg: th.textDimmer }),
-    Text({ content: "dd         delete meeting",    fg: th.textDimmer }),
-    Text({ content: "e          export",            fg: th.textDimmer }),
-    Text({ content: "o          open in editor",    fg: th.textDimmer }),
-    Text({ content: "y          yank to clipboard", fg: th.textDimmer }),
-    Text({ content: "m          ai summary",        fg: th.textDimmer }),
-    Text({ content: "s          settings",          fg: th.textDimmer }),
-    Text({ content: "q          quit",              fg: th.textDimmer }),
+    Box(
+      { flexDirection: "column" },
+      row("n",       "start new meeting"),
+      row("j / k",   "navigate sidebar"),
+      row("Enter",   "open transcript"),
+      row("Tab",     "switch panes"),
+      row("dd",      "delete meeting"),
+      row("e",       "export"),
+      row("o",       "open in editor"),
+      row("y",       "yank to clipboard"),
+      row("m",       "ai summary"),
+      row("s",       "settings"),
+      row("q",       "quit"),
+    ),
     Text({ content: "", height: 1 }),
     Text({ content: "v0.1.0  ·  backed by voxtype CLI", fg: th.textVeryFaint }),
   );
