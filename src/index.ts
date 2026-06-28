@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { createCliRenderer, type ThemeMode } from "@opentui/core";
 import { createInitialState, type AppState, type Meeting, type TranscriptChunk } from "./state";
 import { App } from "./components/app";

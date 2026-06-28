@@ -1,14 +1,28 @@
 {
   "name": "voxtype-meeting-tui",
+  "version": "0.1.0",
+  "description": "Terminal UI for voxtype's meeting mode",
   "module": "src/index.ts",
+  "bin": {
+    "vmt": "./src/index.ts"
+  },
   "scripts": {
     "dev": "bun --hot src/index.ts",
     "start": "bun src/index.ts",
     "build": "bun build --compile src/index.ts --outfile voxtype-meeting-tui",
+    "build:linux-x64": "bun build --compile --target=bun-linux-x64 src/index.ts --outfile dist/vmt-linux-x64",
+    "build:linux-arm64": "bun build --compile --target=bun-linux-arm64 src/index.ts --outfile dist/vmt-linux-arm64",
+    "build:darwin-x64": "bun build --compile --target=bun-darwin-x64 src/index.ts --outfile dist/vmt-darwin-x64",
+    "build:darwin-arm64": "bun build --compile --target=bun-darwin-arm64 src/index.ts --outfile dist/vmt-darwin-arm64",
+    "release": "mkdir -p dist && bun run build:linux-x64 && bun run build:linux-arm64 && bun run build:darwin-x64 && bun run build:darwin-arm64",
     "typecheck": "tsc --noEmit"
   },
+  "keywords": ["voxtype", "meeting", "tui", "terminal", "cli"],
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0"
+  },
   "type": "module",
-  "private": true,
   "devDependencies": {
     "@types/bun": "latest"
   },
